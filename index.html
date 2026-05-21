@@ -326,10 +326,10 @@ h2 em { font-style: italic; }
 .project-card.featured { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; }
 
 .project-visual {
-  height: 200px; position: relative; overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
+  height: 220px; position: relative; overflow: hidden;
 }
-.project-card.featured .project-visual { height: auto; min-height: 280px; }
+.project-card.featured .project-visual { height: auto; min-height: 300px; }
+.pv-screenshot-wrap { position: relative; width: 100%; height: 100%; }
 
 .pv-1 { background: linear-gradient(135deg, #0f2044, #1a3260, #2a5298); }
 .pv-2 { background: linear-gradient(135deg, #1a3260, #2a5298, #1e4080); }
@@ -344,6 +344,20 @@ h2 em { font-style: italic; }
   position: absolute; inset: 0;
   background-image: radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);
   background-size: 24px 24px;
+}
+.pv-screenshot {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.project-card:hover .pv-screenshot { transform: scale(1.04); }
+.pv-screenshot-wrap {
+  position: relative; width: 100%; height: 100%; overflow: hidden;
+}
+.pv-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 60%, rgba(15,32,68,0.5) 100%);
 }
 .pv-type-badge {
   position: absolute; top: 1rem; left: 1rem;
@@ -447,7 +461,7 @@ h2 em { font-style: italic; }
 #testimonials h2 { color: #fff; }
 #testimonials .section-desc { color: rgba(255,255,255,0.75); }
 
-.testi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; position: relative; z-index: 1; }
+.testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; position: relative; z-index: 1; }
 .testi-card {
   background: rgba(255,255,255,0.12);
   backdrop-filter: blur(16px);
@@ -466,6 +480,7 @@ h2 em { font-style: italic; }
 }
 .av1 { background: linear-gradient(135deg, #1a3260, #2a5298); }
 .av2 { background: linear-gradient(135deg, #0f2044, #1a3260); }
+.av3 { background: linear-gradient(135deg, #047857, #059669); }
 .testi-name { font-size: 0.9rem; font-weight: 700; color: #fff; display: block; }
 .testi-role { font-size: 0.7rem; font-weight: 500; color: rgba(255,255,255,0.6); }
 
@@ -737,10 +752,12 @@ footer p { font-size: 0.8rem; color: rgba(255,255,255,0.4); font-weight: 500; }
   <div class="projects-grid reveal">
     <!-- Featured -->
     <div class="project-card featured">
-      <div class="project-visual pv-1">
-        <div class="pv-dots"></div>
-        <span class="pv-type-badge">Featured Project</span>
-        <span class="pv-emoji">📰</span>
+      <div class="project-visual">
+        <div class="pv-screenshot-wrap">
+          <img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.pressfeatured.com?w=640&h=400" alt="pressfeatured" class="pv-screenshot" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\"width:100%;height:100%;background:linear-gradient(135deg,#0f2044,#1a3260);display:flex;align-items:center;justify-content:center;font-size:3rem\">📰</div>'">
+          <div class="pv-overlay"></div>
+          <span class="pv-type-badge">Featured Project</span>
+        </div>
       </div>
       <div class="project-info">
         <div class="project-type">Media & PR Platform</div>
@@ -757,10 +774,12 @@ footer p { font-size: 0.8rem; color: rgba(255,255,255,0.4); font-weight: 500; }
     </div>
 
     <div class="project-card">
-      <div class="project-visual pv-2">
-        <div class="pv-dots"></div>
-        <span class="pv-type-badge">WooCommerce</span>
-        <span class="pv-emoji">🖨️</span>
+      <div class="project-visual">
+        <div class="pv-screenshot-wrap">
+          <img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.theprinthavenng.com?w=640&h=400" alt="theprinthavenng" class="pv-screenshot" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\"width:100%;height:100%;background:linear-gradient(135deg,#0f2044,#1a3260);display:flex;align-items:center;justify-content:center;font-size:3rem\">🖨️</div>'">
+          <div class="pv-overlay"></div>
+          <span class="pv-type-badge">WooCommerce</span>
+        </div>
       </div>
       <div class="project-info">
         <div class="project-type">Print eCommerce</div>
@@ -776,10 +795,12 @@ footer p { font-size: 0.8rem; color: rgba(255,255,255,0.4); font-weight: 500; }
     </div>
 
     <div class="project-card">
-      <div class="project-visual pv-3">
-        <div class="pv-dots"></div>
-        <span class="pv-type-badge">WooCommerce</span>
-        <span class="pv-emoji">🧸</span>
+      <div class="project-visual">
+        <div class="pv-screenshot-wrap">
+          <img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fmade4kidsng.com?w=640&h=400" alt="made4kidsng" class="pv-screenshot" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\"width:100%;height:100%;background:linear-gradient(135deg,#0f2044,#1a3260);display:flex;align-items:center;justify-content:center;font-size:3rem\">🧸</div>'">
+          <div class="pv-overlay"></div>
+          <span class="pv-type-badge">WooCommerce</span>
+        </div>
       </div>
       <div class="project-info">
         <div class="project-type">Kids Retail Store</div>
@@ -795,10 +816,12 @@ footer p { font-size: 0.8rem; color: rgba(255,255,255,0.4); font-weight: 500; }
     </div>
 
     <div class="project-card">
-      <div class="project-visual pv-4">
-        <div class="pv-dots"></div>
-        <span class="pv-type-badge">Corporate</span>
-        <span class="pv-emoji">💰</span>
+      <div class="project-visual">
+        <div class="pv-screenshot-wrap">
+          <img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fbeniratiofinances.com?w=640&h=400" alt="beniratiofinances" class="pv-screenshot" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\"width:100%;height:100%;background:linear-gradient(135deg,#0f2044,#1a3260);display:flex;align-items:center;justify-content:center;font-size:3rem\">💰</div>'">
+          <div class="pv-overlay"></div>
+          <span class="pv-type-badge">Corporate</span>
+        </div>
       </div>
       <div class="project-info">
         <div class="project-type">Finance Company</div>
@@ -814,10 +837,12 @@ footer p { font-size: 0.8rem; color: rgba(255,255,255,0.4); font-weight: 500; }
     </div>
 
     <div class="project-card">
-      <div class="project-visual pv-5">
-        <div class="pv-dots"></div>
-        <span class="pv-type-badge">Fashion Brand</span>
-        <span class="pv-emoji">🚀</span>
+      <div class="project-visual">
+        <div class="pv-screenshot-wrap">
+          <img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fastronautbytommy.com?w=640&h=400" alt="astronautbytommy" class="pv-screenshot" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\"width:100%;height:100%;background:linear-gradient(135deg,#0f2044,#1a3260);display:flex;align-items:center;justify-content:center;font-size:3rem\">🚀</div>'">
+          <div class="pv-overlay"></div>
+          <span class="pv-type-badge">Fashion Brand</span>
+        </div>
       </div>
       <div class="project-info">
         <div class="project-type">Brand & eCommerce</div>
@@ -833,10 +858,12 @@ footer p { font-size: 0.8rem; color: rgba(255,255,255,0.4); font-weight: 500; }
     </div>
 
     <div class="project-card">
-      <div class="project-visual pv-6">
-        <div class="pv-dots"></div>
-        <span class="pv-type-badge">Fashion Retail</span>
-        <span class="pv-emoji">👜</span>
+      <div class="project-visual">
+        <div class="pv-screenshot-wrap">
+          <img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fdahbbystore.com?w=640&h=400" alt="dahbbystore" class="pv-screenshot" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\"width:100%;height:100%;background:linear-gradient(135deg,#0f2044,#1a3260);display:flex;align-items:center;justify-content:center;font-size:3rem\">👜</div>'">
+          <div class="pv-overlay"></div>
+          <span class="pv-type-badge">Fashion Retail</span>
+        </div>
       </div>
       <div class="project-info">
         <div class="project-type">WooCommerce Store</div>
@@ -850,6 +877,70 @@ footer p { font-size: 0.8rem; color: rgba(255,255,255,0.4); font-weight: 500; }
         <a href="https://dahbbystore.com" target="_blank" class="project-link">Visit Live Site →</a>
       </div>
     </div>
+
+    <div class="project-card">
+      <div class="project-visual">
+        <div class="pv-screenshot-wrap">
+          <img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.healingfromdivorce.org?w=640&h=400" alt="healingfromdivorce" class="pv-screenshot" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\"width:100%;height:100%;background:linear-gradient(135deg,#0f2044,#1a3260);display:flex;align-items:center;justify-content:center;font-size:3rem\">💚</div>'">
+          <div class="pv-overlay"></div>
+          <span class="pv-type-badge">Wellness</span>
+        </div>
+      </div>
+      <div class="project-info">
+        <div class="project-type">Wellness &amp; Community</div>
+        <h3>Healing From Divorce</h3>
+        <p>A compassionate wellness platform supporting people through divorce recovery. Clean, calming WordPress design with resources, community features, and a welcoming user experience.</p>
+        <div class="project-tags">
+          <span class="ptag">WordPress</span>
+          <span class="ptag">Custom Theme</span>
+          <span class="ptag">SEO</span>
+        </div>
+        <a href="https://www.healingfromdivorce.org/" target="_blank" class="project-link">Visit Live Site →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-visual">
+        <div class="pv-screenshot-wrap">
+          <img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fjumacaluminiumroofing.com?w=640&h=400" alt="jumacaluminiumroofing" class="pv-screenshot" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\"width:100%;height:100%;background:linear-gradient(135deg,#0f2044,#1a3260);display:flex;align-items:center;justify-content:center;font-size:3rem\">🏗️</div>'">
+          <div class="pv-overlay"></div>
+          <span class="pv-type-badge">Construction</span>
+        </div>
+      </div>
+      <div class="project-info">
+        <div class="project-type">Business Website</div>
+        <h3>Juma Aluminium Roofing</h3>
+        <p>A professional business website for an aluminium roofing company — showcasing services, completed projects, and a strong local presence with lead generation built in.</p>
+        <div class="project-tags">
+          <span class="ptag">WordPress</span>
+          <span class="ptag">Elementor Pro</span>
+          <span class="ptag">Lead Gen</span>
+        </div>
+        <a href="https://jumacaluminiumroofing.com/" target="_blank" class="project-link">Visit Live Site →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-visual">
+        <div class="pv-screenshot-wrap">
+          <img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fcnergii.com?w=640&h=400" alt="cnergii" class="pv-screenshot" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\"width:100%;height:100%;background:linear-gradient(135deg,#0f2044,#1a3260);display:flex;align-items:center;justify-content:center;font-size:3rem\">⚡</div>'">
+          <div class="pv-overlay"></div>
+          <span class="pv-type-badge">Energy / Tech</span>
+        </div>
+      </div>
+      <div class="project-info">
+        <div class="project-type">Corporate WordPress</div>
+        <h3>Cnergii</h3>
+        <p>A modern corporate website for an energy-focused tech company. Sleek, professional design with clear service messaging, engaging visuals, and a performance-optimised build.</p>
+        <div class="project-tags">
+          <span class="ptag">WordPress</span>
+          <span class="ptag">WPBakery</span>
+          <span class="ptag">Performance</span>
+        </div>
+        <a href="https://cnergii.com" target="_blank" class="project-link">Visit Live Site →</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -935,6 +1026,17 @@ footer p { font-size: 0.8rem; color: rgba(255,255,255,0.4); font-weight: 500; }
         <div>
           <span class="testi-name">Dabira</span>
           <span class="testi-role">CEO, Dahbby Store</span>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote">"</div>
+      <p>Hope completely understood the heart behind our platform. He built us something that feels warm, trustworthy, and professional — exactly what people going through divorce need to see. Truly outstanding work.</p>
+      <div class="testi-author">
+        <div class="testi-avatar av3">TI</div>
+        <div>
+          <span class="testi-name">Tiffany</span>
+          <span class="testi-role">CEO, Healing From Divorce</span>
         </div>
       </div>
     </div>
