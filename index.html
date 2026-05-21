@@ -614,6 +614,175 @@ footer p { font-size: 0.8rem; color: rgba(255,255,255,0.4); font-weight: 500; }
     box-shadow: 0 4px 16px rgba(15,32,68,0.12);
     display: flex; align-items: center; gap: 0.4rem;
   }
+
+  /* ═══════════════════════════════════════
+     RESPONSIVE — TABLET & MOBILE
+  ═══════════════════════════════════════ */
+
+  /* ── TABLET (≤ 1024px) ── */
+  @media (max-width: 1024px) {
+    nav { padding: 1.2rem 2.5rem; }
+    nav.scrolled { padding: 0.9rem 2.5rem; }
+    .nav-links { gap: 1.8rem; }
+
+    #hero {
+      grid-template-columns: 1fr;
+      padding: 8rem 2.5rem 4rem;
+      gap: 3rem;
+      text-align: center;
+    }
+    .hero-left { display: flex; flex-direction: column; align-items: center; }
+    .hero-desc { max-width: 100%; }
+    .hero-ctas { justify-content: center; }
+    .hero-photo-wrap { order: -1; padding: 0; }
+    .hero-right {
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .stat-card { width: 200px; }
+    .tech-badges { justify-content: center; max-width: 100%; }
+
+    section { padding: 5rem 2.5rem; }
+
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    .project-card.featured { grid-column: span 2; }
+
+    .skills-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .skills-right { position: static; }
+
+    .testi-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+
+    footer { padding: 2rem 2.5rem; }
+  }
+
+  /* ── MOBILE (≤ 768px) ── */
+  @media (max-width: 768px) {
+    /* Nav — hamburger style */
+    nav { padding: 1rem 1.5rem; }
+    nav.scrolled { padding: 0.8rem 1.5rem; }
+    .nav-links { display: none; }
+
+    /* Show mobile menu toggle */
+    .nav-mobile-toggle {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-mobile-toggle span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(20px);
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      z-index: 150;
+    }
+    .nav-links.open a { font-size: 1.4rem; color: var(--navy); }
+    .nav-close {
+      position: absolute;
+      top: 1.5rem; right: 1.5rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--navy);
+      background: none; border: none;
+      font-weight: 300;
+    }
+
+    /* Hero */
+    #hero {
+      padding: 7rem 1.5rem 3rem;
+      gap: 2.5rem;
+    }
+    h1 { font-size: 2.8rem; }
+    .hero-desc { font-size: 0.95rem; }
+    .hero-ctas { flex-direction: column; align-items: center; }
+    .btn-primary, .btn-ghost { width: 100%; text-align: center; }
+
+    .hero-photo-card { width: 220px; height: 270px; }
+    .hero-photo-img { width: 220px; height: 270px; }
+    .photo-ring-1 { width: 250px; height: 250px; }
+    .photo-ring-2 { width: 290px; height: 290px; }
+
+    .hero-right {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    .stat-card { width: 100%; max-width: 320px; }
+
+    /* Sections */
+    section { padding: 4rem 1.5rem; }
+    h2 { font-size: 2rem; }
+    .section-desc { font-size: 0.9rem; margin-bottom: 2.5rem; }
+
+    /* Services */
+    .services-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .service-card { padding: 1.8rem; }
+
+    /* Projects */
+    .projects-grid { grid-template-columns: 1fr; }
+    .project-card.featured {
+      grid-column: span 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card.featured .project-visual { min-height: 200px; }
+    .project-card.featured .project-info { padding: 1.8rem; }
+    .project-card.featured .project-info h3 { font-size: 1.5rem; }
+    .project-info { padding: 1.5rem; }
+
+    /* Skills */
+    .skill-bar { width: 90px; }
+    .cert-card { padding: 1.1rem 1.2rem; }
+
+    /* Testimonials */
+    .testi-grid { grid-template-columns: 1fr; }
+
+    /* Contact */
+    .form-row { grid-template-columns: 1fr; }
+    .contact-form-wrap { padding: 1.8rem; }
+
+    /* Footer */
+    footer {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+      padding: 1.8rem 1.5rem;
+    }
+  }
+
+  /* ── SMALL MOBILE (≤ 420px) ── */
+  @media (max-width: 420px) {
+    h1 { font-size: 2.3rem; }
+    .hero-photo-card { width: 180px; height: 220px; }
+    .hero-photo-img { width: 180px; height: 220px; border-radius: 90px 90px 70px 70px; }
+    .photo-ring-1 { width: 210px; height: 210px; }
+    .photo-ring-2 { width: 250px; height: 250px; }
+    .nav-logo { font-size: 1.2rem; }
+    .stat-num { font-size: 2.2rem; }
+  }
+
+  /* Desktop — show toggle hidden */
+  .nav-mobile-toggle { display: none; }
+  .nav-close { display: none; }
+
 </style>
 </head>
 <body>
@@ -621,13 +790,17 @@ footer p { font-size: 0.8rem; color: rgba(255,255,255,0.4); font-weight: 500; }
 <!-- NAV -->
 <nav id="navbar">
   <a href="#" class="nav-logo">Hope.</a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="navLinks">
+    <button class="nav-close" id="navClose" aria-label="Close menu">✕</button>
     <li><a href="#services">Services</a></li>
     <li><a href="#projects">Work</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#testimonials">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <div class="nav-mobile-toggle" id="navToggle" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -935,31 +1108,10 @@ footer p { font-size: 0.8rem; color: rgba(255,255,255,0.4); font-weight: 500; }
     <div class="skills-right">
       <div class="section-pill pill-skills" style="margin-bottom:1.5rem">Certifications</div>
       <div class="cert-card">
-        <div class="cert-icon ci-1">🏆</div>
+        <div class="cert-icon ci-1">🎓</div>
         <div class="cert-info">
-          <h4>WordPress Core Contributor</h4>
-          <p>WordPress.org — Since 2020</p>
-        </div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-icon ci-2">☁️</div>
-        <div class="cert-info">
-          <h4>AWS Certified Solutions Architect</h4>
-          <p>Amazon Web Services — 2023</p>
-        </div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-icon ci-3">🔒</div>
-        <div class="cert-info">
-          <h4>Web Application Security</h4>
-          <p>OWASP Foundation — 2022</p>
-        </div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-icon ci-4">🛒</div>
-        <div class="cert-info">
-          <h4>WooCommerce Developer Certified</h4>
-          <p>Automattic — 2021</p>
+          <h4>WordPress Development Certificate</h4>
+          <p>Coursera — Verified Certificate</p>
         </div>
       </div>
     </div>
@@ -1188,6 +1340,19 @@ footer p { font-size: 0.8rem; color: rgba(255,255,255,0.4); font-weight: 500; }
       }
     });
   }
+
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks2 = document.getElementById('navLinks');
+  const navClose = document.getElementById('navClose');
+  if (navToggle) {
+    navToggle.addEventListener('click', () => navLinks2.classList.add('open'));
+    navClose.addEventListener('click', () => navLinks2.classList.remove('open'));
+    navLinks2.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks2.classList.remove('open'));
+    });
+  }
+
 </script>
 </body>
 </html>
